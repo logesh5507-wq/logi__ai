@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: logi-assist
+    env: java
+    plan: free
+    buildCommand: chmod +x ./mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -jar target/logi-assist.jar
+    envVars:
+      - key: JAVA_VERSION
+        value: 21
+      - key: GEMINI_API_KEY
+        sync: false
