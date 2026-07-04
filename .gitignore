@@ -1,0 +1,9 @@
+target/
+data/
+*.class
+*.log
+.idea/
+*.iml
+.vscode/settings.json
+.DS_Store
+HELP.md
