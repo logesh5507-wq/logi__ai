@@ -42,7 +42,7 @@ Logi_Assist uses Google's Gemini API for the actual AI (natural language → SQL
 Open `src/main/resources/application.properties` and replace this line:
 
 ```properties
-gemini.api.key=${GEMINI_API_KEY:PASTE_YOUR_GEMINI_API_KEY_HERE}
+gemini.api.key=${GEMINI_API_KEY:YOUR_GEMINI_API_KEY_HERE}
 ```
 
 with:

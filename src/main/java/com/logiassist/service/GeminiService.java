@@ -44,8 +44,9 @@ public class GeminiService {
 
         if (!isConfiguredApiKey(apiKey)) {
             throw new IllegalStateException(
-                    "Gemini API key not configured. Add it in application.properties (gemini.api.key) " +
-                    "or set the GEMINI_API_KEY environment variable. Get a free key at https://aistudio.google.com/apikey"
+                    "Gemini API key is not configured. Set GEMINI_API_KEY in your environment " +
+                    "or define gemini.api.key in src/main/resources/application.properties. " +
+                    "Get a free key at https://aistudio.google.com/apikey"
             );
         }
 
@@ -85,7 +86,10 @@ public class GeminiService {
     }
 
     private boolean isConfiguredApiKey(String key) {
-        return key != null && !key.isBlank() && !key.equals("PASTE_YOUR_GEMINI_API_KEY_HERE");
+        return key != null && !key.isBlank()
+                && !key.equals("PASTE_YOUR_GEMINI_API_KEY_HERE")
+                && !key.equals("YOUR_GEMINI_API_KEY_HERE")
+                && !key.equals("AIzaSy_your_actual_key_here");
     }
 
     private String extractTextFromResponse(String rawJson) throws Exception {
