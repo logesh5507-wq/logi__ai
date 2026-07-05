@@ -4,9 +4,9 @@ services:
     env: java
     plan: free
     buildCommand: chmod +x ./mvnw && ./mvnw clean package -DskipTests
-    startCommand: java -jar target/logi-assist.jar
+    startCommand: java -jar target/logi-assist-1.0.0.jar
     envVars:
       - key: JAVA_VERSION
         value: 21
       - key: GEMINI_API_KEY
-        sync: false
+        sync: false 
